@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/roboto.woff2") format("woff2");
+}
+
+@theme {
+  --color-arriva-green: #1e7443;
+  --color-arriva-green-deep: #176338;
+  --color-arriva-green-bar: #1e7443;
+  --color-arriva-cyan: #00bece;
+  --color-arriva-cyan-soft: #d7f4f8;
+  --color-arriva-cyan-mid: #b7eaf0;
+  --color-arriva-cyan-deep: #9edfe8;
+  --color-section: #f1f2f4;
+  --color-section-border: #e8e9ed;
+  --color-ink: #1c1c1e;
+  --color-muted: #8e8e93;
+  --color-label: #6c6c72;
+  --color-purple: #4a4568;
+  --color-purple-icon: #3f3b5c;
+  --color-meta: #5a9eaa;
+  --color-link: #3b2770;
+  --color-cta: #241549;
+  --color-cta-hover: #2d1b5a;
+  --color-paper: #ffffff;
+  --color-photo: #c5cad1;
+  --color-photo-ink: #f4f5f6;
+  --color-hairline: #ececec;
+  --color-page-side: #0c3c24;
+  --color-clock: #8e8e93;
+  --color-close: #c5c5c7;
+
+  --font-sans: "Roboto", -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --radius-card: 0.875rem;
+  --radius-section: 0.625rem;
+  --radius-photo: 0.375rem;
+  --radius-bar: 0.5rem;
+  --radius-pill: 999px;
+
+  --shadow-phone: 0 24px 60px rgb(10 40 24 / 0.28);
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-sans);
+    background: var(--color-arriva-green);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.scallop-wrap {
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  pointer-events: none;
+}
+
+.scallop-track {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  animation: scallop-slide-right 8s linear infinite;
+}
+
+@keyframes scallop-slide-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scallop-track {
+    animation: none;
+  }
+}
+
+.ticket-qr {
+  image-rendering: -webkit-optimize-contrast;
+}
