@@ -5,3 +5,4 @@
 [build.environment]
   NODE_VERSION = "22"
   VITE_AUTH_ENABLED = "false"
+  NPM_CONFIG_PRODUCTION = "false"
