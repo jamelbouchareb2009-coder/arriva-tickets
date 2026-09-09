@@ -11,7 +11,7 @@ html,body{margin:0!important;padding:0!important;width:100%!important;height:100
 .ticket-main{flex:1 1 auto!important;min-height:0!important;width:100%!important;margin:0 auto!important;background:#1e7443!important}
 .ticket-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;z-index:40!important;flex:0 0 auto!important;width:100%!important;margin:0!important;padding:32px 0 calc(8px + env(safe-area-inset-bottom,0px))!important;background:#fff!important;border-radius:0!important;border-bottom-left-radius:0!important;border-bottom-right-radius:0!important;box-sizing:border-box!important;transform:none!important;box-shadow:0 100vh 0 0 #fff!important;overflow:visible!important}
 .ticket-cta{box-sizing:border-box!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;margin:0!important;height:46px!important;flex-shrink:0!important}
-.ticket-scroll{flex:1 1 auto!important;min-height:0!important;padding-bottom:calc(140px + env(safe-area-inset-bottom,0px))!important}
+.ticket-scroll{flex:1 1 auto!important;min-height:0!important;padding-bottom:calc(113px + env(safe-area-inset-bottom,0px))!important}
 `;
 
 export const Route = createRootRoute({
