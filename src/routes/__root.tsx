@@ -6,13 +6,12 @@ import appCss from "../styles.css?url";
 const APP_NAME = "Arriva Tickets";
 
 const CRITICAL_CSS = `
-html{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100lvh!important;min-height:-webkit-fill-available!important;overflow:hidden!important;background:#fff!important}
-body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100lvh!important;min-height:-webkit-fill-available!important;overflow:hidden!important;background:#1e7443!important}
-.app-shell{position:fixed!important;inset:0!important;width:auto!important;height:auto!important;min-height:0!important;background:#1e7443!important}
-.ticket-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;z-index:40!important;width:auto!important;max-width:none!important;margin:0!important;transform:none!important;background:#fff!important;display:block!important;padding:32px 0 calc(16px + env(safe-area-inset-bottom,0px))!important;min-height:0!important;height:auto!important;box-sizing:border-box!important;overflow:visible!important;box-shadow:0 80px 0 40px #fff!important}
-.ticket-footer::after{content:"";position:absolute;left:0;right:0;top:100%;height:200px;background:#fff;pointer-events:none}
-.ticket-cta{box-sizing:border-box!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;margin:0!important;height:46px!important;flex-shrink:0!important;overflow:visible!important}
-.ticket-scroll{padding-bottom:calc(120px + env(safe-area-inset-bottom,0px))!important}
+html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;overflow:hidden!important;background:#1e7443!important}
+.app-shell{display:flex!important;flex-direction:column!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;margin:0!important;padding:0!important;background:#1e7443!important;box-sizing:border-box!important}
+.ticket-main{flex:1 1 auto!important;min-height:0!important;width:100%!important;margin-left:auto!important;margin-right:auto!important}
+.ticket-footer{flex:0 0 auto!important;width:100%!important;margin:0!important;margin-top:auto!important;padding:32px 0 calc(16px + env(safe-area-inset-bottom,0px))!important;background:#fff!important;border-radius:0!important;border-bottom-left-radius:0!important;border-bottom-right-radius:0!important;box-sizing:border-box!important;position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;box-shadow:none!important}
+.ticket-cta{box-sizing:border-box!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;margin:0!important;height:46px!important;flex-shrink:0!important}
+.ticket-scroll{flex:1 1 auto!important;min-height:0!important;padding-bottom:24px!important}
 `;
 
 export const Route = createRootRoute({

@@ -62,21 +62,17 @@
 
   html,
   body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     height: 100%;
     min-height: 100%;
-    min-height: 100lvh;
-    min-height: -webkit-fill-available;
-    width: 100%;
+    min-height: 100dvh;
     overflow: hidden;
     overscroll-behavior: none;
   }
 
-  html {
-    background: #ffffff;
-  }
-
   body {
-    margin: 0;
     font-family: var(--font-sans);
     background: var(--color-arriva-green);
     color: var(--color-ink);
@@ -90,49 +86,46 @@
 }
 
 .app-shell {
-  position: fixed !important;
-  top: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: auto !important;
-  height: auto !important;
-  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  min-height: 100dvh !important;
+  margin: 0 !important;
+  padding: 0 !important;
   background: #1e7443 !important;
+  box-sizing: border-box !important;
+}
+
+.ticket-main {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .ticket-footer {
-  position: fixed !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  z-index: 40 !important;
-  width: auto !important;
-  max-width: none !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
   margin: 0 !important;
-  transform: none !important;
-  background: #ffffff !important;
-  display: block !important;
+  margin-top: auto !important;
   padding-top: 32px !important;
   padding-right: 0 !important;
   padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px)) !important;
   padding-left: 0 !important;
+  background: #ffffff !important;
+  border-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
   box-sizing: border-box !important;
-  min-height: 0 !important;
-  height: auto !important;
-  overflow: visible !important;
-  box-shadow: 0 80px 0 40px #ffffff !important;
-}
-
-.ticket-footer::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 100%;
-  height: 200px;
-  background: #ffffff;
-  pointer-events: none;
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 .ticket-cta {
@@ -145,11 +138,12 @@
   margin: 0 !important;
   height: 46px !important;
   flex-shrink: 0 !important;
-  overflow: visible !important;
 }
 
 .ticket-scroll {
-  padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px)) !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  padding-bottom: 24px !important;
 }
 
 .scallop-wrap {
