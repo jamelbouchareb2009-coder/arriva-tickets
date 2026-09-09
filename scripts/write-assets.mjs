@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -19,6 +19,10 @@ const FILES = [
 for (const [srcRel, destRel] of FILES) {
   const src = join(root, srcRel);
   const dest = join(root, destRel);
+  if (!existsSync(src)) {
+    console.warn("[write-assets] missing", srcRel, "— skip");
+    continue;
+  }
   mkdirSync(dirname(dest), { recursive: true });
   writeFileSync(dest, Buffer.from(readFileSync(src, "utf8"), "base64"));
   console.log("[write-assets]", destRel);
