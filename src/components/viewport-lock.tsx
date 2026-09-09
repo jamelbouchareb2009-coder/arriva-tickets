@@ -1,15 +1,23 @@
 import { useEffect } from "react";
 
+const FOOTER_PAD_BOTTOM = "calc(16px + env(safe-area-inset-bottom, 0px))";
+
 function pinFooter() {
   const footer = document.querySelector(".ticket-footer") as HTMLElement | null;
   const shell = document.querySelector(".app-shell") as HTMLElement | null;
+  const html = document.documentElement;
+  const { body } = document;
 
-  document.documentElement.style.height = "100%";
-  document.body.style.height = "100%";
-  document.body.style.minHeight = "100%";
-  document.body.style.margin = "0";
-  document.body.style.padding = "0";
-  document.body.style.background = "#1e7443";
+  html.style.height = "100%";
+  html.style.minHeight = "-webkit-fill-available";
+  html.style.background = "#ffffff";
+  html.style.overflow = "hidden";
+
+  body.style.height = "100%";
+  body.style.minHeight = "-webkit-fill-available";
+  body.style.margin = "0";
+  body.style.padding = "0";
+  body.style.background = "#1e7443";
 
   if (shell) {
     shell.style.position = "fixed";
@@ -17,8 +25,10 @@ function pinFooter() {
     shell.style.left = "0";
     shell.style.right = "0";
     shell.style.bottom = "0";
-    shell.style.height = "100%";
-    shell.style.width = "100%";
+    shell.style.width = "auto";
+    shell.style.height = "auto";
+    shell.style.minHeight = "0";
+    shell.style.background = "#1e7443";
   }
 
   if (footer) {
@@ -37,8 +47,9 @@ function pinFooter() {
     footer.style.overflow = "visible";
     footer.style.paddingTop = "32px";
     footer.style.paddingRight = "0";
-    footer.style.paddingBottom = "16px";
+    footer.style.paddingBottom = FOOTER_PAD_BOTTOM;
     footer.style.paddingLeft = "0";
+    footer.style.boxShadow = "0 80px 0 40px #ffffff";
     const cta = footer.querySelector(".ticket-cta") as HTMLElement | null;
     if (cta) {
       cta.style.position = "relative";

@@ -1,6 +1,16 @@
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { ViewportLock } from "@/components/viewport-lock";
 import { cn } from "@/lib/utils";
+
+function BodyPortal({ children }: { children: ReactNode }) {
+  const [target, setTarget] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    setTarget(document.body);
+  }, []);
+  if (!target) return <>{children}</>;
+  return createPortal(children, target);
+}
 
 export function PhoneFrame({
   children,
@@ -24,7 +34,7 @@ export function PhoneFrame({
           {children}
         </div>
       </div>
-      {footer}
+      {footer ? <BodyPortal>{footer}</BodyPortal> : null}
     </div>
   );
 }
