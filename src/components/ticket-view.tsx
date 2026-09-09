@@ -9,6 +9,7 @@ import { ScallopWave } from "@/components/scallop-wave";
 import { SectionAccordion } from "@/components/section-accordion";
 import { CardInfoIcon, PlaneIcon, ValidationIcon } from "@/components/ticket-icons";
 import { TransferSheet } from "@/components/transfer-sheet";
+import { productTitleSrc, ticketMetaSrc } from "@/lib/img";
 import { TICKET } from "@/lib/ticket-data";
 
 export function TicketView() {
@@ -27,7 +28,7 @@ export function TicketView() {
             <ArrivaLogo className="mb-4 h-[22px]" />
 
             <img
-              src="/product-title.png"
+              src={productTitleSrc}
               alt={`${TICKET.productTitle}. ${TICKET.productSubtitle}`}
               className="-mx-4 mb-1 w-[calc(100%+2rem)] max-w-none select-none"
             />
@@ -85,7 +86,7 @@ export function TicketView() {
             </div>
 
             <img
-              src="/ticket-meta.png"
+              src={ticketMetaSrc}
               alt="Emesso il: 08/09/2026 – 20:26. Prezzo 576,00€. Codice biglietto: 2001664/150880"
               draggable={false}
               className="-ml-0.5 mt-1 w-[calc(100%+0.125rem)] select-none"

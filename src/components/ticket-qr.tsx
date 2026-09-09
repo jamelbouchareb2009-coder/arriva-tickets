@@ -1,9 +1,10 @@
 import { cn } from "@/lib/utils";
+import { ticketQrSrc } from "@/lib/img";
 
 export function TicketQr({ className }: { className?: string }) {
   return (
     <img
-      src="/ticket-qr.png"
+      src={ticketQrSrc}
       alt="Ticket QR code"
       draggable={false}
       className={cn(

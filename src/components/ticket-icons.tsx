@@ -1,7 +1,9 @@
+import { cardInfoSrc, validationSrc, clockSrc, lockSrc } from "@/lib/img";
+
 export function CardInfoIcon({ className }: { className?: string }) {
   return (
     <img
-      src="/icons/card-info.png"
+      src={cardInfoSrc}
       alt=""
       aria-hidden="true"
       draggable={false}
@@ -14,7 +16,7 @@ export function CardInfoIcon({ className }: { className?: string }) {
 export function ValidationIcon({ className }: { className?: string }) {
   return (
     <img
-      src="/icons/validation.png"
+      src={validationSrc}
       alt=""
       aria-hidden="true"
       draggable={false}
@@ -27,7 +29,7 @@ export function ValidationIcon({ className }: { className?: string }) {
 export function ClockIcon({ className }: { className?: string }) {
   return (
     <img
-      src="/icons/clock.png"
+      src={clockSrc}
       alt=""
       aria-hidden="true"
       draggable={false}
@@ -40,7 +42,7 @@ export function ClockIcon({ className }: { className?: string }) {
 export function LockIcon({ className }: { className?: string }) {
   return (
     <img
-      src="/icons/lock.png"
+      src={lockSrc}
       alt=""
       aria-hidden="true"
       draggable={false}
