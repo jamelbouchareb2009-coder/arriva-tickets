@@ -34,9 +34,10 @@ function pinFooter() {
     footer.style.transform = "none";
     footer.style.minHeight = "0";
     footer.style.height = "auto";
-    footer.style.paddingTop = "16px";
+    footer.style.overflow = "visible";
+    footer.style.paddingTop = "32px";
     footer.style.paddingRight = "0";
-    footer.style.paddingBottom = "0";
+    footer.style.paddingBottom = "16px";
     footer.style.paddingLeft = "0";
     const cta = footer.querySelector(".ticket-cta") as HTMLElement | null;
     if (cta) {
@@ -46,6 +47,9 @@ function pinFooter() {
       cta.style.width = "calc(100vw - 20px)";
       cta.style.maxWidth = "calc(100vw - 20px)";
       cta.style.margin = "0";
+      cta.style.height = "46px";
+      cta.style.flexShrink = "0";
+      cta.style.overflow = "visible";
     }
   }
 }

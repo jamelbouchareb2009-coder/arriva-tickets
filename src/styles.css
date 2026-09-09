@@ -107,13 +107,14 @@
   transform: none !important;
   background: #ffffff !important;
   display: block !important;
-  padding-top: 16px !important;
+  padding-top: 32px !important;
   padding-right: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 16px !important;
   padding-left: 0 !important;
   box-sizing: border-box !important;
   min-height: 0 !important;
   height: auto !important;
+  overflow: visible !important;
 }
 
 .ticket-cta {
@@ -124,10 +125,13 @@
   width: calc(100vw - 20px) !important;
   max-width: calc(100vw - 20px) !important;
   margin: 0 !important;
+  height: 46px !important;
+  flex-shrink: 0 !important;
+  overflow: visible !important;
 }
 
 .ticket-scroll {
-  padding-bottom: 130px !important;
+  padding-bottom: 65px !important;
 }
 
 .scallop-wrap {
