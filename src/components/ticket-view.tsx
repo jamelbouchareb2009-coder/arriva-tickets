@@ -19,7 +19,20 @@ export function TicketView() {
   const [transfer, setTransfer] = useState(false);
 
   return (
-    <PhoneFrame>
+    <PhoneFrame
+      footer={
+        <div className="ticket-footer">
+          <button
+            type="button"
+            onClick={() => setTransfer(true)}
+            className="ticket-cta relative flex h-[46px] items-center justify-center rounded-full bg-cta text-[14px] font-medium text-paper transition-colors duration-150 hover:bg-cta-hover"
+          >
+            <PlaneIcon className="absolute left-[14px] size-[18px]" />
+            Transfer ticket
+          </button>
+        </div>
+      }
+    >
       <AppHeader title="Active ticket" backTo="/tickets" />
 
       <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[18px] pt-6">
@@ -91,17 +104,6 @@ export function TicketView() {
             className="-ml-0.5 mt-1 w-[calc(100%+0.125rem)] select-none"
           />
         </article>
-      </div>
-
-      <div className="ticket-footer">
-        <button
-          type="button"
-          onClick={() => setTransfer(true)}
-          className="relative flex h-[46px] w-full items-center justify-center rounded-full bg-cta text-[14px] font-medium text-paper transition-colors duration-150 hover:bg-cta-hover"
-        >
-          <PlaneIcon className="absolute left-[14px] size-[18px]" />
-          Transfer ticket
-        </button>
       </div>
 
       {enlarge ? <QrOverlay onClose={() => setEnlarge(false)} /> : null}

@@ -78,7 +78,21 @@ function pinFooter() {
     footer.style.bottom = `${gap}px`;
     footer.style.zIndex = "40";
     footer.style.background = "#ffffff";
-    footer.style.width = "100%";
+    footer.style.width = "auto";
+    footer.style.maxWidth = "none";
+    footer.style.margin = "0";
+    footer.style.transform = "none";
+    footer.style.paddingLeft = "0";
+    footer.style.paddingRight = "0";
+    const cta = footer.querySelector(".ticket-cta") as HTMLElement | null;
+    if (cta) {
+      cta.style.position = "relative";
+      cta.style.left = "50%";
+      cta.style.transform = "translateX(-50%)";
+      cta.style.width = "calc(100vw - 20px)";
+      cta.style.maxWidth = "calc(100vw - 20px)";
+      cta.style.margin = "0";
+    }
   }
 
   hideNetlifyChrome();

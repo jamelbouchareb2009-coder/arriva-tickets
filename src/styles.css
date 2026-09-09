@@ -101,15 +101,27 @@
   right: 0 !important;
   bottom: 0 !important;
   z-index: 40 !important;
-  width: 100% !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  transform: none !important;
   background: #ffffff !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  display: block !important;
   padding-top: max(36px, env(safe-area-inset-bottom, 0px)) !important;
-  padding-right: 10px !important;
+  padding-right: 0 !important;
   padding-bottom: max(36px, env(safe-area-inset-bottom, 0px)) !important;
-  padding-left: 10px !important;
+  padding-left: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ticket-cta {
+  box-sizing: border-box !important;
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: calc(100vw - 20px) !important;
+  max-width: calc(100vw - 20px) !important;
+  margin: 0 !important;
 }
 
 .ticket-scroll {
