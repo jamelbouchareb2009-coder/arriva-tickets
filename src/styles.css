@@ -109,7 +109,7 @@
   display: block !important;
   padding-top: 16px !important;
   padding-right: 0 !important;
-  padding-bottom: 8px !important;
+  padding-bottom: 0 !important;
   padding-left: 0 !important;
   box-sizing: border-box !important;
   min-height: 0 !important;
@@ -127,7 +127,7 @@
 }
 
 .ticket-scroll {
-  padding-bottom: 80px !important;
+  padding-bottom: 130px !important;
 }
 
 .scallop-wrap {

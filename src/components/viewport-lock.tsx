@@ -36,7 +36,7 @@ function pinFooter() {
     footer.style.height = "auto";
     footer.style.paddingTop = "16px";
     footer.style.paddingRight = "0";
-    footer.style.paddingBottom = "8px";
+    footer.style.paddingBottom = "0";
     footer.style.paddingLeft = "0";
     const cta = footer.querySelector(".ticket-cta") as HTMLElement | null;
     if (cta) {
