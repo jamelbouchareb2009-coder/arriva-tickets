@@ -32,22 +32,24 @@ export function AppHeader({
   return (
     <header
       className={cn(
-        "app-header relative flex shrink-0 items-center justify-center bg-arriva-green text-paper",
+        "app-header shrink-0 bg-arriva-green text-paper",
         className,
       )}
     >
-      {backTo ? (
-        <Link
-          to={backTo}
-          aria-label="Go back"
-          className="absolute left-[6px] top-1/2 flex size-11 -translate-y-1/2 items-center justify-center text-paper"
-        >
-          <BackChevron className="size-[26px]" />
-        </Link>
-      ) : null}
-      <h1 className="text-[20px] font-medium leading-none tracking-[0.2px]">
-        {title}
-      </h1>
+      <div className="relative flex h-11 w-full items-center justify-center">
+        {backTo ? (
+          <Link
+            to={backTo}
+            aria-label="Go back"
+            className="absolute left-[6px] top-1/2 flex size-11 -translate-y-1/2 items-center justify-center text-paper"
+          >
+            <BackChevron className="size-[26px]" />
+          </Link>
+        ) : null}
+        <h1 className="text-[20px] font-medium leading-none tracking-[0.2px]">
+          {title}
+        </h1>
+      </div>
     </header>
   );
 }
