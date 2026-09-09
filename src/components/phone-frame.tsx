@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ViewportLock } from "@/components/viewport-lock";
 import { cn } from "@/lib/utils";
 
 export function PhoneFrame({
@@ -10,6 +11,7 @@ export function PhoneFrame({
 }) {
   return (
     <div className="app-shell flex justify-center bg-arriva-green">
+      <ViewportLock />
       <div
         className={cn(
           "relative flex h-full min-h-0 w-full max-w-md flex-col overflow-hidden bg-arriva-green",

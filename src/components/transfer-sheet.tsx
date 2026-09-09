@@ -16,7 +16,7 @@ export function TransferSheet({ onClose }: { onClose: () => void }) {
 
   return (
     <div
-      className="absolute inset-0 z-50 flex items-end justify-center"
+      className="fixed inset-0 z-50 flex items-end justify-center"
       role="dialog"
       aria-modal="true"
       aria-labelledby="transfer-title"

@@ -3,7 +3,7 @@ import { TicketQr } from "@/components/ticket-qr";
 export function QrOverlay({ onClose }: { onClose: () => void }) {
   return (
     <div
-      className="absolute inset-0 z-50 bg-paper"
+      className="fixed inset-0 z-50 bg-paper"
       role="dialog"
       aria-modal="true"
       aria-label="Enlarged QR code"

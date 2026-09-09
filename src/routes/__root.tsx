@@ -5,6 +5,14 @@ import appCss from "../styles.css?url";
 
 const APP_NAME = "Arriva Tickets";
 
+const CRITICAL_CSS = `
+html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;overflow:hidden!important;background:#1e7443!important}
+.app-shell{position:fixed!important;inset:0!important;width:100%!important;height:100%!important;height:var(--app-h,100dvh)!important;background:#1e7443!important}
+.ticket-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;z-index:40!important;width:100%!important;background:#fff!important;padding:20px 10px max(20px,env(safe-area-inset-bottom,0px))!important}
+.ticket-scroll{padding-bottom:calc(110px + env(safe-area-inset-bottom,0px))!important}
+iframe[src*="netlify-cdp"],netlify-drawer,#netlify-deploy-preview-bar,#netlify-preview-wrapper{display:none!important;visibility:hidden!important;height:0!important}
+`;
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -12,12 +20,16 @@ export const Route = createRootRoute({
       {
         name: "viewport",
         content:
-          "width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1",
+          "width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no",
       },
       { title: APP_NAME },
       { name: "theme-color", content: "#1E7443" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "mobile-web-app-capable", content: "yes" },
+      {
+        name: "apple-mobile-web-app-status-bar-style",
+        content: "black-translucent",
+      },
       {
         name: "description",
         content:
@@ -30,6 +42,7 @@ export const Route = createRootRoute({
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
     ],
+    styles: [{ children: CRITICAL_CSS }],
   }),
   component: () => (
     <html lang="en" suppressHydrationWarning>
