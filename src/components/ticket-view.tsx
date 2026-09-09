@@ -35,7 +35,7 @@ export function TicketView() {
     >
       <AppHeader title="Active ticket" backTo="/tickets" />
 
-      <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[18px] pt-6">
+      <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[18px] pt-3">
         <article className="overflow-hidden rounded-[14px] bg-paper px-4 pb-5 pt-[18px]">
           <ArrivaLogo className="mb-4 h-[22px]" />
 

@@ -32,7 +32,7 @@ export function AppHeader({
   return (
     <header
       className={cn(
-        "relative flex h-14 shrink-0 items-center justify-center bg-arriva-green text-paper",
+        "app-header relative flex shrink-0 items-center justify-center bg-arriva-green text-paper",
         className,
       )}
     >
