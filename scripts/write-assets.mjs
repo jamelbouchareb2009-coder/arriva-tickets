@@ -6,24 +6,36 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const FILES = [
-  ["assets-b64/ticket-qr.b64", "public/ticket-qr.png"],
-  ["assets-b64/ticket-meta.b64", "public/ticket-meta.png"],
-  ["assets-b64/product-title.b64", "public/product-title.png"],
-  ["assets-b64/clock.b64", "public/icons/clock.png"],
-  ["assets-b64/lock.b64", "public/icons/lock.png"],
-  ["assets-b64/card-info.b64", "public/icons/card-info.png"],
-  ["assets-b64/validation.b64", "public/icons/validation.png"],
-  ["assets-b64/roboto.b64", "public/fonts/roboto.woff2"],
+  ["ticket-qr", "public/ticket-qr.png"],
+  ["ticket-meta", "public/ticket-meta.png"],
+  ["product-title", "public/product-title.png"],
+  ["clock", "public/icons/clock.png"],
+  ["lock", "public/icons/lock.png"],
+  ["card-info", "public/icons/card-info.png"],
+  ["validation", "public/icons/validation.png"],
+  ["roboto", "public/fonts/roboto.woff2"],
 ];
 
-for (const [srcRel, destRel] of FILES) {
-  const src = join(root, srcRel);
-  const dest = join(root, destRel);
-  if (!existsSync(src)) {
-    console.warn("[write-assets] missing", srcRel, "— skip");
+function loadB64(stem) {
+  const single = join(root, "assets-b64", `${stem}.b64`);
+  if (existsSync(single)) return readFileSync(single, "utf8").replace(/\s+/g, "");
+  const parts = [];
+  for (let i = 0; ; i++) {
+    const p = join(root, "assets-b64", `${stem}.part${String(i).padStart(2, "0")}`);
+    if (!existsSync(p)) break;
+    parts.push(readFileSync(p, "utf8").replace(/\s+/g, ""));
+  }
+  return parts.join("");
+}
+
+for (const [stem, destRel] of FILES) {
+  const b64 = loadB64(stem);
+  if (!b64) {
+    console.warn("[write-assets] missing", stem, "— skip");
     continue;
   }
+  const dest = join(root, destRel);
   mkdirSync(dirname(dest), { recursive: true });
-  writeFileSync(dest, Buffer.from(readFileSync(src, "utf8"), "base64"));
-  console.log("[write-assets]", destRel);
+  writeFileSync(dest, Buffer.from(b64, "base64"));
+  console.log("[write-assets]", destRel, Buffer.from(b64, "base64").length, "bytes");
 }
