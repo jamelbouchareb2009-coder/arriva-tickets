@@ -11,7 +11,7 @@ function TicketsPage() {
   return (
     <PhoneFrame>
       <AppHeader title="My tickets" />
-      <div className="flex-1 bg-section px-3 py-4">
+      <div className="min-h-0 flex-1 overflow-y-auto bg-section px-3 py-4">
         <p className="mb-2 px-1 text-xs font-semibold uppercase tracking-wider text-muted">
           Active
         </p>
@@ -41,6 +41,14 @@ function TicketsPage() {
             Active
           </div>
         </Link>
+
+        <a
+          href="/arriva-tickets-netlify.zip"
+          download="arriva-tickets-netlify.zip"
+          className="mt-6 flex w-full items-center justify-center rounded-full bg-cta px-4 py-3 text-sm font-medium text-paper"
+        >
+          Scarica progetto (ZIP)
+        </a>
       </div>
     </PhoneFrame>
   );

@@ -63,8 +63,11 @@
   html,
   body {
     height: 100%;
+    height: 100svh;
+    height: 100dvh;
     width: 100%;
     overflow: hidden;
+    overscroll-behavior: none;
   }
 
   body {
@@ -79,6 +82,24 @@
   * {
     -webkit-tap-highlight-color: transparent;
   }
+}
+
+.app-shell {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: -webkit-fill-available;
+  height: 100svh;
+  height: 100dvh;
+  max-height: 100dvh;
+}
+
+.ticket-footer {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
 }
 
 .scallop-wrap {

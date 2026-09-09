@@ -9,10 +9,10 @@ export function PhoneFrame({
   className?: string;
 }) {
   return (
-    <div className="fixed inset-0 flex justify-center bg-arriva-green">
+    <div className="app-shell flex justify-center bg-arriva-green">
       <div
         className={cn(
-          "relative flex h-full w-full max-w-md flex-col overflow-hidden bg-arriva-green",
+          "relative flex h-full min-h-0 w-full max-w-md flex-col overflow-hidden bg-arriva-green",
           className,
         )}
       >

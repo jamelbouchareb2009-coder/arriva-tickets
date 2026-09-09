@@ -9,12 +9,19 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "viewport",
+        content:
+          "width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1",
+      },
       { title: APP_NAME },
       { name: "theme-color", content: "#1E7443" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "mobile-web-app-capable", content: "yes" },
       {
         name: "description",
-        content: "Digital Arriva extraurban student pass — Vestone to Idro.",
+        content:
+          "Digital Arriva extraurban student pass — Vestone to Idro.",
       },
     ],
     links: [

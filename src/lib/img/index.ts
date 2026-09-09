@@ -1,8 +1,8 @@
-export { productTitleSrc } from "./productTitle";
-export { ticketMetaSrc } from "./ticketMeta";
-export { ticketQrSrc } from "./ticketQr";
-export { cardInfoSrc } from "./cardInfo";
-export { validationSrc } from "./validation";
-export { clockSrc } from "./clock";
-export { lockSrc } from "./lock";
-export { logoSrc } from "./logo";
+export const productTitleSrc = "/product-title.png";
+export const ticketMetaSrc = "/ticket-meta.png";
+export const ticketQrSrc = "/ticket-qr.png";
+export const cardInfoSrc = "/icons/card-info.png";
+export const validationSrc = "/icons/validation.png";
+export const clockSrc = "/icons/clock.png";
+export const lockSrc = "/icons/lock.png";
+export const logoSrc = "/arriva-logo.svg";
