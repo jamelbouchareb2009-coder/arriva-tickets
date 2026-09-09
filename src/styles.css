@@ -107,11 +107,13 @@
   transform: none !important;
   background: #ffffff !important;
   display: block !important;
-  padding-top: max(36px, env(safe-area-inset-bottom, 0px)) !important;
+  padding-top: 16px !important;
   padding-right: 0 !important;
-  padding-bottom: max(36px, env(safe-area-inset-bottom, 0px)) !important;
+  padding-bottom: 8px !important;
   padding-left: 0 !important;
   box-sizing: border-box !important;
+  min-height: 0 !important;
+  height: auto !important;
 }
 
 .ticket-cta {
@@ -125,7 +127,7 @@
 }
 
 .ticket-scroll {
-  padding-bottom: calc(130px + env(safe-area-inset-bottom, 0px)) !important;
+  padding-bottom: 80px !important;
 }
 
 iframe[src*="netlify-cdp"],

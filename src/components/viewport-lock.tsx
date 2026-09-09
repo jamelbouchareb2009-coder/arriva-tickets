@@ -47,16 +47,10 @@ function hideNetlifyChrome() {
 function pinFooter() {
   const footer = document.querySelector(".ticket-footer") as HTMLElement | null;
   const shell = document.querySelector(".app-shell") as HTMLElement | null;
-  const vv = window.visualViewport;
-  const height = vv ? vv.height : window.innerHeight;
-  const gap = vv
-    ? Math.max(0, window.innerHeight - vv.offsetTop - vv.height)
-    : 0;
 
-  document.documentElement.style.setProperty("--app-h", `${height}px`);
-  document.documentElement.style.height = `${height}px`;
-  document.body.style.height = `${height}px`;
-  document.body.style.minHeight = `${height}px`;
+  document.documentElement.style.height = "100%";
+  document.body.style.height = "100%";
+  document.body.style.minHeight = "100%";
   document.body.style.margin = "0";
   document.body.style.padding = "0";
   document.body.style.background = "#1e7443";
@@ -66,8 +60,8 @@ function pinFooter() {
     shell.style.top = "0";
     shell.style.left = "0";
     shell.style.right = "0";
-    shell.style.bottom = `${gap}px`;
-    shell.style.height = `${height}px`;
+    shell.style.bottom = "0";
+    shell.style.height = "100%";
     shell.style.width = "100%";
   }
 
@@ -75,15 +69,19 @@ function pinFooter() {
     footer.style.position = "fixed";
     footer.style.left = "0";
     footer.style.right = "0";
-    footer.style.bottom = `${gap}px`;
+    footer.style.bottom = "0";
     footer.style.zIndex = "40";
     footer.style.background = "#ffffff";
     footer.style.width = "auto";
     footer.style.maxWidth = "none";
     footer.style.margin = "0";
     footer.style.transform = "none";
-    footer.style.paddingLeft = "0";
+    footer.style.minHeight = "0";
+    footer.style.height = "auto";
+    footer.style.paddingTop = "16px";
     footer.style.paddingRight = "0";
+    footer.style.paddingBottom = "8px";
+    footer.style.paddingLeft = "0";
     const cta = footer.querySelector(".ticket-cta") as HTMLElement | null;
     if (cta) {
       cta.style.position = "relative";
