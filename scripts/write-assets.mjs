@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const b64Dir = join(root, "assets-b64");
 
 const FILES = [
   ["ticket-qr", "public/ticket-qr.png"],
@@ -16,22 +17,21 @@ const FILES = [
   ["roboto", "public/fonts/roboto.woff2"],
 ];
 
-function loadB64(stem) {
-  const single = join(root, "assets-b64", `${stem}.b64`);
+function readB64(name) {
+  const single = join(b64Dir, `${name}.b64`);
   if (existsSync(single)) return readFileSync(single, "utf8").replace(/\s+/g, "");
-  const parts = [];
-  for (let i = 0; ; i++) {
-    const p = join(root, "assets-b64", `${stem}.part${String(i).padStart(2, "0")}`);
-    if (!existsSync(p)) break;
-    parts.push(readFileSync(p, "utf8").replace(/\s+/g, ""));
-  }
-  return parts.join("");
+  if (!existsSync(b64Dir)) return null;
+  const parts = readdirSync(b64Dir)
+    .filter((f) => f.startsWith(`${name}.part`))
+    .sort();
+  if (parts.length === 0) return null;
+  return parts.map((f) => readFileSync(join(b64Dir, f), "utf8")).join("").replace(/\s+/g, "");
 }
 
-for (const [stem, destRel] of FILES) {
-  const b64 = loadB64(stem);
+for (const [name, destRel] of FILES) {
+  const b64 = readB64(name);
   if (!b64) {
-    console.warn("[write-assets] missing", stem, "— skip");
+    console.warn("[write-assets] missing", name, "— skip");
     continue;
   }
   const dest = join(root, destRel);
