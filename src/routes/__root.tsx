@@ -6,12 +6,12 @@ import appCss from "../styles.css?url";
 const APP_NAME = "Arriva Tickets";
 
 const CRITICAL_CSS = `
-html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;overflow:hidden!important;background:#1e7443!important}
+html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;overflow:hidden!important;background:#fff!important}
 .app-shell{display:flex!important;flex-direction:column!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;margin:0!important;padding:0!important;background:#1e7443!important;box-sizing:border-box!important}
 .ticket-main{flex:1 1 auto!important;min-height:0!important;width:100%!important;margin-left:auto!important;margin-right:auto!important}
-.ticket-footer{flex:0 0 auto!important;width:100%!important;margin:0!important;margin-top:auto!important;padding:32px 0 calc(16px + env(safe-area-inset-bottom,0px))!important;background:#fff!important;border-radius:0!important;border-bottom-left-radius:0!important;border-bottom-right-radius:0!important;box-sizing:border-box!important;position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;transform:none!important;box-shadow:none!important}
+.ticket-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;z-index:40!important;width:100%!important;margin:0!important;padding:32px 0 8px!important;background:#fff!important;border-radius:0!important;border-bottom-left-radius:0!important;border-bottom-right-radius:0!important;box-sizing:border-box!important;transform:none!important;box-shadow:0 100vh 0 0 #fff!important}
 .ticket-cta{box-sizing:border-box!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;margin:0!important;height:46px!important;flex-shrink:0!important}
-.ticket-scroll{flex:1 1 auto!important;min-height:0!important;padding-bottom:24px!important}
+.ticket-scroll{flex:1 1 auto!important;min-height:0!important;padding-bottom:96px!important}
 `;
 
 export const Route = createRootRoute({
@@ -24,7 +24,7 @@ export const Route = createRootRoute({
           "width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no",
       },
       { title: APP_NAME },
-      { name: "theme-color", content: "#1E7443" },
+      { name: "theme-color", content: "#ffffff" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "mobile-web-app-capable", content: "yes" },
       {
