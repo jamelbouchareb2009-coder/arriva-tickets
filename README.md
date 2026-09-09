@@ -1,17 +1,17 @@
 # Arriva Tickets
 
-Replica del biglietto Arriva Italia.
+Biglietto digitale Arriva Italia.
 
-## Deploy su Netlify
+## Sito
 
-1. Vai su [netlify.com](https://www.netlify.com/) → **Add new site** → **Import an existing project** → GitHub
-2. Scegli questo repository `arriva-tickets`
-3. Conferma:
-   - **Build command:** `npm run build`
-   - **Publish directory:** `dist`
-   - **Node version:** `22`
-4. Deploy. Ottieni un link pubblico da mandare.
+Pubblicato su **Vercel**. Ogni push su `main` aggiorna il sito.
 
-Le impostazioni sono già in `netlify.toml`.
+## Deploy
 
-Niente database, niente login. Non modificare design, font, spaziature o animazioni.
+Il repository è già configurato per Vercel (`vercel.json` + Nitro preset `vercel`).
+
+- **Build command:** `npm run build`
+- **Node:** 22
+- **Framework:** TanStack Start
+
+Niente database, niente login.

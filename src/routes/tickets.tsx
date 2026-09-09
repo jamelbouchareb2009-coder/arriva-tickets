@@ -41,14 +41,6 @@ function TicketsPage() {
             Active
           </div>
         </Link>
-
-        <a
-          href="/arriva-tickets-netlify.zip"
-          download="arriva-tickets-netlify.zip"
-          className="mt-6 flex w-full items-center justify-center rounded-full bg-cta px-4 py-3 text-sm font-medium text-paper"
-        >
-          Scarica progetto (ZIP)
-        </a>
       </div>
     </PhoneFrame>
   );

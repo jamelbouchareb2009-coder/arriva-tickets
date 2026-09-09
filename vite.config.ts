@@ -10,7 +10,7 @@ export default defineConfig(({ command, isPreview }) => ({
     tailwindcss(),
     tanstackStart(),
     ...(command === "build" || isPreview
-      ? [nitro({ preset: "netlify" })]
+      ? [nitro({ preset: "vercel" })]
       : []),
     viteReact(),
   ],

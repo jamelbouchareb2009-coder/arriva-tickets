@@ -3,6 +3,9 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "engines": {
+    "node": "22"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "node scripts/write-assets.mjs && vite build",

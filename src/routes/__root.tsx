@@ -11,7 +11,6 @@ html,body{margin:0!important;padding:0!important;width:100%!important;height:100
 .ticket-footer{position:fixed!important;left:0!important;right:0!important;bottom:0!important;z-index:40!important;width:auto!important;max-width:none!important;margin:0!important;transform:none!important;background:#fff!important;display:block!important;padding:16px 0 8px!important;min-height:0!important;height:auto!important;box-sizing:border-box!important}
 .ticket-cta{box-sizing:border-box!important;position:relative!important;left:50%!important;transform:translateX(-50%)!important;width:calc(100vw - 20px)!important;max-width:calc(100vw - 20px)!important;margin:0!important}
 .ticket-scroll{padding-bottom:80px!important}
-iframe[src*="netlify-cdp"],netlify-drawer,#netlify-deploy-preview-bar,#netlify-preview-wrapper{display:none!important;visibility:hidden!important;height:0!important}
 `;
 
 export const Route = createRootRoute({

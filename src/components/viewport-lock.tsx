@@ -1,49 +1,5 @@
 import { useEffect } from "react";
 
-function hideNetlifyChrome() {
-  const kill = (el: Element | null) => {
-    if (!el || !(el instanceof HTMLElement)) return;
-    el.style.setProperty("display", "none", "important");
-    el.style.setProperty("visibility", "hidden", "important");
-    el.style.setProperty("pointer-events", "none", "important");
-    el.style.setProperty("opacity", "0", "important");
-    el.style.setProperty("height", "0", "important");
-    try {
-      el.remove();
-    } catch {
-      /* ignore */
-    }
-  };
-
-  const scan = (root: ParentNode) => {
-    root.querySelectorAll("iframe, script, div, aside, button, a, span").forEach((node) => {
-      const el = node as HTMLElement;
-      const src = el.getAttribute("src") || el.getAttribute("href") || "";
-      const tag = el.tagName.toLowerCase();
-      const blob = `${tag} ${el.id} ${el.className} ${src} ${el.textContent ?? ""}`;
-      if (
-        /netlify-cdp|netlify-drawer|netlify-preview|nf-drawer/i.test(blob) ||
-        (tag === "iframe" && /netlify/i.test(src)) ||
-        (/netlify\.app/i.test(el.textContent ?? "") &&
-          (getComputedStyle(el).position === "fixed" ||
-            getComputedStyle(el.parentElement ?? el).position === "fixed"))
-      ) {
-        kill(el);
-        if (el.parentElement && /netlify/i.test(el.parentElement.textContent ?? "")) {
-          kill(el.parentElement);
-        }
-      }
-    });
-    root.querySelectorAll("*").forEach((node) => {
-      const host = node as HTMLElement & { shadowRoot?: ShadowRoot | null };
-      if (host.tagName?.toLowerCase().startsWith("netlify")) kill(host);
-      if (host.shadowRoot) scan(host.shadowRoot);
-    });
-  };
-
-  scan(document);
-}
-
 function pinFooter() {
   const footer = document.querySelector(".ticket-footer") as HTMLElement | null;
   const shell = document.querySelector(".app-shell") as HTMLElement | null;
@@ -92,8 +48,6 @@ function pinFooter() {
       cta.style.margin = "0";
     }
   }
-
-  hideNetlifyChrome();
 }
 
 export function ViewportLock() {
@@ -104,13 +58,11 @@ export function ViewportLock() {
     window.addEventListener("orientationchange", onPin);
     window.visualViewport?.addEventListener("resize", onPin);
     window.visualViewport?.addEventListener("scroll", onPin);
-    const interval = window.setInterval(hideNetlifyChrome, 750);
     return () => {
       window.removeEventListener("resize", onPin);
       window.removeEventListener("orientationchange", onPin);
       window.visualViewport?.removeEventListener("resize", onPin);
       window.visualViewport?.removeEventListener("scroll", onPin);
-      window.clearInterval(interval);
     };
   }, []);
 
