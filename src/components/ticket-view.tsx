@@ -9,7 +9,7 @@ import { ScallopWave } from "@/components/scallop-wave";
 import { SectionAccordion } from "@/components/section-accordion";
 import { CardInfoIcon, PlaneIcon, ValidationIcon } from "@/components/ticket-icons";
 import { TransferSheet } from "@/components/transfer-sheet";
-import { productTitleSrc, ticketMetaSrc } from "@/lib/img";
+import { productTitleSrc } from "@/lib/img";
 import { TICKET } from "@/lib/ticket-data";
 
 export function TicketView() {
@@ -36,7 +36,7 @@ export function TicketView() {
       <AppHeader title="Active ticket" backTo="/tickets" />
 
       <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[18px] pt-3">
-        <article className="overflow-hidden rounded-[14px] bg-paper px-4 pb-5 pt-[18px]">
+        <article className="overflow-hidden rounded-[10px] bg-paper px-4 pb-5 pt-[18px]">
           <ArrivaLogo className="mb-4 h-[22px]" />
 
           <img
@@ -86,7 +86,7 @@ export function TicketView() {
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
-          <div className="relative z-10 rounded-[8px] bg-arriva-green-bar px-3.5 py-[7px] text-paper">
+          <div className="relative z-10 rounded-[6px] bg-arriva-green-bar px-3.5 py-[7px] text-paper">
             <p className="text-[13px] leading-[16px]">
               Da <span className="font-bold">CASTO</span> a{" "}
               <span className="font-bold">SALÒ</span>
@@ -97,12 +97,25 @@ export function TicketView() {
             </p>
           </div>
 
-          <img
-            src={ticketMetaSrc}
-            alt="Emesso il: 08/09/2026 – 20:26. Prezzo 576,00€. Codice biglietto: 2001664/150880"
-            draggable={false}
-            className="-ml-0.5 mt-1 w-[calc(100%+0.125rem)] select-none"
-          />
+          <div className="mt-3">
+            <p className="text-[13px] leading-[18px] text-ink">Emesso il:</p>
+            <p className="mt-[1px] text-[17px] font-extrabold leading-[22px] tracking-tight text-ink">
+              08/09/2026 – 20:26
+            </p>
+            <div className="mt-[18px] flex items-end justify-between">
+              <p className="text-[16px] font-semibold leading-none text-ink">
+                Prezzo
+              </p>
+              <p className="text-[19px] font-extrabold leading-none tracking-tight text-ink">
+                576,00€
+              </p>
+            </div>
+            <div className="mt-[10px] h-px bg-hairline" />
+            <div className="mt-3 flex items-center justify-between">
+              <p className="text-[13px] text-muted">Codice biglietto:</p>
+              <p className="text-[13px] text-muted">2001664/150880</p>
+            </div>
+          </div>
         </article>
       </div>
 

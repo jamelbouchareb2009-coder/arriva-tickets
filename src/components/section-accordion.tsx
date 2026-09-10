@@ -20,7 +20,7 @@ export function SectionAccordion({
   children: ReactNode;
 }) {
   return (
-    <section className="rounded-[10px] border border-section-border bg-section">
+    <section className="rounded-[8px] border border-section-border bg-section">
       <button
         type="button"
         onClick={onToggle}
