@@ -52,21 +52,25 @@ export function TicketView() {
               onToggle={() => setCardOpen((v) => !v)}
               icon={<CardInfoIcon className="size-[18px]" />}
             >
-              <div className="flex gap-4 pb-4 pt-1">
-                <IdSilhouette className="size-[84px] shrink-0 rounded-[6px]" />
-                <div className="min-w-0 flex-1 pt-0.5">
-                  <p className="text-[16px] font-bold tracking-tight text-ink">
+              <div className="flex items-start gap-3.5 pb-2 pt-0.5">
+                <IdSilhouette className="size-[76px] shrink-0 rounded-[4px]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.displayName}
                   </p>
-                  <p className="mt-0.5 text-[13px] tracking-[0.01em] text-ink">
+                  <p className="mt-0.5 text-[14px] font-normal leading-[18px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.fiscalCode}
                   </p>
-                  <p className="mt-2.5 text-[13px] text-label">Card no.</p>
-                  <p className="text-[16px] font-bold text-ink">
+                  <p className="mt-2 text-[14px] leading-[18px] text-[#3a3a3c] [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
+                    Card no.
+                  </p>
+                  <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.cardNo}
                   </p>
-                  <p className="mt-2 text-[13px] text-label">Expiry date:</p>
-                  <p className="text-[16px] font-bold text-ink">
+                  <p className="mt-2 text-[14px] leading-[18px] text-[#3a3a3c] [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
+                    Expiry date:
+                  </p>
+                  <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.expiry}
                   </p>
                 </div>

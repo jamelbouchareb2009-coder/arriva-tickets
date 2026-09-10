@@ -4,9 +4,9 @@ export const TICKET = {
   productSubtitle:
     "Abbonamento annuale studenti valido sulla rete extraurbana Arriva",
   holder: {
-    firstName: "Ahmed",
-    lastName: "Sairibi",
-    displayName: "SAIRIBI AHMED",
+    firstName: "Lamine",
+    lastName: "Cherki",
+    displayName: "LAMINE CHERKI",
     fiscalCode: "SRBHMD07D12B157X",
     cardNo: "B31785",
     expiry: "12/2027",

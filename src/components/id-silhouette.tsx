@@ -7,11 +7,11 @@ export function IdSilhouette({ className }: { className?: string }) {
       role="img"
     >
       <title>Passenger photo</title>
-      <rect width="88" height="88" rx="6" fill="#c8cdd3" />
-      <circle cx="44" cy="32" r="16" fill="#f3f4f6" />
+      <rect width="88" height="88" rx="4" fill="#c5c8ce" />
+      <circle cx="44" cy="30" r="18" fill="#f4f5f6" />
       <path
-        fill="#f3f4f6"
-        d="M10 88c2.4-22 16-34 34-34s31.6 12 34 34v2H10v-2z"
+        fill="#f4f5f6"
+        d="M8 88c3-20 16.5-32 36-32s33 12 36 32v4H8v-4z"
       />
     </svg>
   );
