@@ -36,13 +36,13 @@ export function TicketView() {
       <AppHeader title="Active ticket" backTo="/tickets" />
 
       <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[18px] pt-3">
-        <article className="overflow-hidden rounded-[10px] bg-paper px-4 pb-5 pt-[18px]">
+        <article className="overflow-hidden rounded-[14px] bg-paper px-5 pb-7 pt-[18px]">
           <ArrivaLogo className="mb-4 h-[22px]" />
 
           <img
             src={productTitleSrc}
             alt={`${TICKET.productTitle}. ${TICKET.productSubtitle}`}
-            className="-mx-4 mb-1 w-[calc(100%+2rem)] max-w-none select-none"
+            className="-mx-5 mb-1 w-[calc(100%+2.5rem)] max-w-none select-none"
           />
 
           <div className="mt-4 flex flex-col gap-3">
@@ -86,7 +86,7 @@ export function TicketView() {
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
-          <div className="relative z-10 rounded-[6px] bg-arriva-green-bar px-3.5 py-[7px] text-paper">
+          <div className="relative z-10 rounded-[10px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
             <p className="text-[13px] leading-[16px]">
               Da <span className="font-bold">CASTO</span> a{" "}
               <span className="font-bold">SALÒ</span>
@@ -97,23 +97,23 @@ export function TicketView() {
             </p>
           </div>
 
-          <div className="mt-3">
-            <p className="text-[13px] leading-[18px] text-ink">Emesso il:</p>
-            <p className="mt-[1px] text-[17px] font-extrabold leading-[22px] tracking-tight text-ink">
+          <div className="mt-5">
+            <p className="text-[15px] leading-[20px] text-ink">Emesso il:</p>
+            <p className="mt-1.5 text-[17px] font-bold leading-[22px] text-ink">
               08/09/2026 – 20:26
             </p>
-            <div className="mt-[18px] flex items-end justify-between">
-              <p className="text-[16px] font-semibold leading-none text-ink">
+            <div className="mt-7 flex items-center justify-between">
+              <p className="text-[17px] font-normal leading-none text-ink">
                 Prezzo
               </p>
-              <p className="text-[19px] font-extrabold leading-none tracking-tight text-ink">
+              <p className="text-[22px] font-bold leading-none text-ink">
                 576,00€
               </p>
             </div>
-            <div className="mt-[10px] h-px bg-hairline" />
-            <div className="mt-3 flex items-center justify-between">
-              <p className="text-[13px] text-muted">Codice biglietto:</p>
-              <p className="text-[13px] text-muted">2001664/150880</p>
+            <div className="mt-4 h-px bg-[#c8c8c8]" />
+            <div className="mt-7 flex items-center justify-between">
+              <p className="text-[15px] text-[#8e8e93]">Codice ticket:</p>
+              <p className="text-[15px] text-[#8e8e93]">2001664/150880</p>
             </div>
           </div>
         </article>
