@@ -52,22 +52,22 @@ export function TicketView() {
               onToggle={() => setCardOpen((v) => !v)}
               icon={<CardInfoIcon className="size-[18px]" />}
             >
-              <div className="flex items-start gap-3.5 pb-2 pt-0.5">
-                <IdSilhouette className="size-[76px] shrink-0 rounded-[4px]" />
+              <div className="flex items-start gap-3.5 pb-1 pt-0.5">
+                <IdSilhouette className="size-[88px] shrink-0" />
                 <div className="min-w-0 flex-1">
-                  <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
+                  <p className="text-[17px] font-extrabold leading-[21px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.displayName}
                   </p>
-                  <p className="mt-0.5 text-[14px] font-normal leading-[18px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
+                  <p className="mt-1 text-[15px] font-normal leading-[19px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.fiscalCode}
                   </p>
-                  <p className="mt-2 text-[14px] leading-[18px] text-[#3a3a3c] [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
+                  <p className="mt-2.5 text-[15px] leading-[19px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     Card no.
                   </p>
                   <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     {TICKET.holder.cardNo}
                   </p>
-                  <p className="mt-2 text-[14px] leading-[18px] text-[#3a3a3c] [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
+                  <p className="mt-2.5 text-[15px] leading-[19px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
                     Expiry date:
                   </p>
                   <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
