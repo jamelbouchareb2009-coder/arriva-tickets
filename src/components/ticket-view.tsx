@@ -86,7 +86,7 @@ export function TicketView() {
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
-          <div className="relative z-10 -mt-3 rounded-[4px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
+          <div className="relative z-10 mt-3 rounded-[4px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
             <p className="text-[13px] leading-[16px]">
               Da <span className="font-bold">CASTO</span> a{" "}
               <span className="font-bold">SALÒ</span>
@@ -97,7 +97,7 @@ export function TicketView() {
             </p>
           </div>
 
-          <div className="mt-2">
+          <div className="mt-3">
             <p className="text-[13px] leading-[18px] text-muted">Emesso il:</p>
             <p className="mt-1 text-[16px] font-bold leading-[20px] text-ink">
               08/09/2026 – 20:26
