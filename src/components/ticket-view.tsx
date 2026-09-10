@@ -20,6 +20,7 @@ export function TicketView({
   const [qrOpen, setQrOpen] = useState(true);
   const [enlarge, setEnlarge] = useState(false);
   const [transfer, setTransfer] = useState(false);
+  const ticket = TICKETS[ticketId];
 
   return (
     <PhoneFrame
@@ -76,12 +77,10 @@ export function TicketView({
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
-          {ticketId === "casto-salo" ? (
-            <>
           <div className="relative z-10 mt-1.5 rounded-[4px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
             <p className="text-[13px] leading-[16px]">
-              Da <span className="font-bold">CASTO</span> a{" "}
-              <span className="font-bold">SALÒ</span>
+              Da <span className="font-bold">{ticket.from}</span> a{" "}
+              <span className="font-bold">{ticket.to}</span>
             </p>
             <p className="mt-px text-[12px] leading-[15px]">
               Valido dal <span className="font-bold">08/09/2026</span> al{" "}
@@ -97,7 +96,7 @@ export function TicketView({
             <div className="mt-5 flex items-center justify-between">
               <p className="text-[16px] leading-none text-ink">Prezzo</p>
               <p className="text-[19px] font-bold leading-none text-ink">
-                576,00€
+                {ticket.price}
               </p>
             </div>
             <div className="mt-3 h-px bg-[#e0e0e0]" />
@@ -106,23 +105,6 @@ export function TicketView({
               <p className="text-[13px] text-muted">2001664/150880</p>
             </div>
           </div>
-            </>
-          ) : (
-            <>
-              <img
-                src={TICKETS[ticketId].routeBarSrc}
-                alt={`Da ${TICKETS[ticketId].from} a ${TICKETS[ticketId].to}`}
-                className="relative z-10 mt-1.5 w-full select-none rounded-[4px]"
-                draggable={false}
-              />
-              <img
-                src={TICKETS[ticketId].metaSrc}
-                alt={`${TICKETS[ticketId].from} ${TICKETS[ticketId].to} ticket details`}
-                className="mt-2 w-full select-none"
-                draggable={false}
-              />
-            </>
-          )}
         </article>
       </div>
 

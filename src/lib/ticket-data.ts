@@ -29,17 +29,16 @@ export const TICKETS: Record<
     id: TicketId;
     from: string;
     to: string;
+    price: string;
     validTo: string;
     toPath: "/" | "/ticket/$id";
-    params?: { id: TicketId };
-    routeBarSrc?: string;
-    metaSrc?: string;
   }
 > = {
   "casto-salo": {
     id: "casto-salo",
     from: "CASTO",
     to: "SALÒ",
+    price: "576,00€",
     validTo: "31/08/2027",
     toPath: "/",
   },
@@ -47,21 +46,17 @@ export const TICKETS: Record<
     id: "vestone-idro",
     from: "VESTONE",
     to: "IDRO",
+    price: "392,00€",
     validTo: "31/08/2027",
     toPath: "/ticket/$id",
-    params: { id: "vestone-idro" },
-    routeBarSrc: "/route-vestone-idro.png",
-    metaSrc: "/meta-vestone-idro.png",
   },
   "salo-brescia": {
     id: "salo-brescia",
     from: "SALÒ",
     to: "BRESCIA",
+    price: "669,00€",
     validTo: "31/08/2027",
     toPath: "/ticket/$id",
-    params: { id: "salo-brescia" },
-    routeBarSrc: "/route-salo-brescia.png",
-    metaSrc: "/meta-salo-brescia.png",
   },
 };
 
