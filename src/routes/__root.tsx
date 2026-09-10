@@ -3,7 +3,7 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Arriva Tickets";
+const APP_NAME = "Arriva MyPay";
 
 const CRITICAL_CSS = `
 html,body{margin:0!important;padding:0!important;width:100%!important;height:100%!important;min-height:100%!important;min-height:100dvh!important;min-height:100lvh!important;overflow:hidden!important;background:#fff!important}
@@ -25,7 +25,9 @@ export const Route = createRootRoute({
           "width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no",
       },
       { title: APP_NAME },
-      { name: "theme-color", content: "#ffffff" },
+      { name: "application-name", content: APP_NAME },
+      { name: "apple-mobile-web-app-title", content: APP_NAME },
+      { name: "theme-color", content: "#1e7443" },
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "mobile-web-app-capable", content: "yes" },
       {
@@ -39,7 +41,10 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon-32.png" },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+      { rel: "apple-touch-icon", sizes: "180x180", href: "/__grok/icon-180.png" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/__grok/manifest.webmanifest" },
       { rel: "apple-touch-icon", href: "/__grok/icon-180.png" },
