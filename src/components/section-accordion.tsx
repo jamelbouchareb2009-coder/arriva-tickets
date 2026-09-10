@@ -25,7 +25,7 @@ export function SectionAccordion({
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="flex w-full items-center gap-2.5 px-3.5 py-[13px] text-left"
+        className="flex w-full items-center gap-1.5 px-3.5 py-[13px] text-left"
       >
         <span
           className={cn(
