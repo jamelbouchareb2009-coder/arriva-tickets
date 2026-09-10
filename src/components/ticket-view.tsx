@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ArrivaLogo } from "@/components/arriva-logo";
 import { AppHeader } from "@/components/app-header";
-import { IdSilhouette } from "@/components/id-silhouette";
 import { PhoneFrame } from "@/components/phone-frame";
 import { QrBlock } from "@/components/qr-block";
 import { QrOverlay } from "@/components/qr-overlay";
@@ -9,7 +8,7 @@ import { ScallopWave } from "@/components/scallop-wave";
 import { SectionAccordion } from "@/components/section-accordion";
 import { CardInfoIcon, PlaneIcon, ValidationIcon } from "@/components/ticket-icons";
 import { TransferSheet } from "@/components/transfer-sheet";
-import { productTitleSrc } from "@/lib/img";
+import { productTitleSrc, cardHolderSrc } from "@/lib/img";
 import { TICKET } from "@/lib/ticket-data";
 
 export function TicketView() {
@@ -52,29 +51,12 @@ export function TicketView() {
               onToggle={() => setCardOpen((v) => !v)}
               icon={<CardInfoIcon className="size-[18px]" />}
             >
-              <div className="flex items-start gap-3.5 pb-1 pt-0.5">
-                <IdSilhouette className="size-[88px] shrink-0" />
-                <div className="min-w-0 flex-1">
-                  <p className="text-[17px] font-extrabold leading-[21px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
-                    {TICKET.holder.displayName}
-                  </p>
-                  <p className="mt-1 text-[15px] font-normal leading-[19px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
-                    {TICKET.holder.fiscalCode}
-                  </p>
-                  <p className="mt-2.5 text-[15px] leading-[19px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
-                    Card no.
-                  </p>
-                  <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
-                    {TICKET.holder.cardNo}
-                  </p>
-                  <p className="mt-2.5 text-[15px] leading-[19px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
-                    Expiry date:
-                  </p>
-                  <p className="text-[16px] font-bold leading-[20px] text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text',system-ui,sans-serif]">
-                    {TICKET.holder.expiry}
-                  </p>
-                </div>
-              </div>
+              <img
+                src={cardHolderSrc}
+                alt="LAMINE CHERKI. CHRLMN09H04B157R. Card no. B19642. Expiry date: 12/2027"
+                className="w-full select-none"
+                draggable={false}
+              />
             </SectionAccordion>
 
             <SectionAccordion
