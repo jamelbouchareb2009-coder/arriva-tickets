@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrivaLogo } from "@/components/arriva-logo";
 import { AppHeader } from "@/components/app-header";
+import { IdSilhouette } from "@/components/id-silhouette";
 import { PhoneFrame } from "@/components/phone-frame";
 import { QrBlock } from "@/components/qr-block";
 import { QrOverlay } from "@/components/qr-overlay";
@@ -8,7 +9,7 @@ import { ScallopWave } from "@/components/scallop-wave";
 import { SectionAccordion } from "@/components/section-accordion";
 import { CardInfoIcon, PlaneIcon, ValidationIcon } from "@/components/ticket-icons";
 import { TransferSheet } from "@/components/transfer-sheet";
-import { productTitleSrc, cardHolderSrc } from "@/lib/img";
+import { productTitleSrc } from "@/lib/img";
 import { TICKET } from "@/lib/ticket-data";
 
 export function TicketView() {
@@ -51,12 +52,29 @@ export function TicketView() {
               onToggle={() => setCardOpen((v) => !v)}
               icon={<CardInfoIcon className="size-[18px]" />}
             >
-              <img
-                src={cardHolderSrc}
-                alt="LAMINE CHERKI. CHRLMN09H04B157R. Card no. B19642. Expiry date: 12/2027"
-                className="w-full select-none"
-                draggable={false}
-              />
+              <div className="flex items-start gap-3 pb-8 pt-1">
+                <IdSilhouette className="size-[72px] shrink-0 rounded-[2px]" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-[16px] font-bold leading-[20px] text-black">
+                    {TICKET.holder.displayName}
+                  </p>
+                  <p className="mt-0.5 text-[13px] leading-[17px] text-black">
+                    {TICKET.holder.fiscalCode}
+                  </p>
+                  <p className="mt-2 text-[13px] leading-[17px] text-black">
+                    Card no.
+                  </p>
+                  <p className="text-[16px] font-bold leading-[20px] text-black">
+                    {TICKET.holder.cardNo}
+                  </p>
+                  <p className="mt-2 text-[13px] leading-[17px] text-black">
+                    Expiry date:
+                  </p>
+                  <p className="text-[16px] font-bold leading-[20px] text-black">
+                    {TICKET.holder.expiry}
+                  </p>
+                </div>
+              </div>
             </SectionAccordion>
 
             <SectionAccordion
