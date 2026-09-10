@@ -16,7 +16,7 @@ const ROWS = [
 export function ScallopWave() {
   return (
     <div
-      className="scallop-wrap -mx-5 mt-0.5 mb-0 bg-paper"
+      className="scallop-wrap mt-0.5 mb-0 w-full overflow-hidden bg-paper"
       style={{ height: HEIGHT }}
       aria-hidden="true"
     >

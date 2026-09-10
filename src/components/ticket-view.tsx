@@ -97,23 +97,21 @@ export function TicketView() {
             </p>
           </div>
 
-          <div className="mt-5">
-            <p className="text-[15px] leading-[20px] text-ink">Emesso il:</p>
-            <p className="mt-1.5 text-[17px] font-bold leading-[22px] text-ink">
+          <div className="mt-4">
+            <p className="text-[13px] leading-[18px] text-muted">Emesso il:</p>
+            <p className="mt-1 text-[16px] font-bold leading-[20px] text-ink">
               08/09/2026 – 20:26
             </p>
-            <div className="mt-7 flex items-center justify-between">
-              <p className="text-[17px] font-normal leading-none text-ink">
-                Prezzo
-              </p>
-              <p className="text-[22px] font-bold leading-none text-ink">
+            <div className="mt-5 flex items-center justify-between">
+              <p className="text-[16px] leading-none text-ink">Prezzo</p>
+              <p className="text-[19px] font-bold leading-none text-ink">
                 576,00€
               </p>
             </div>
-            <div className="mt-4 h-px bg-[#c8c8c8]" />
-            <div className="mt-7 flex items-center justify-between">
-              <p className="text-[15px] text-[#8e8e93]">Codice ticket:</p>
-              <p className="text-[15px] text-[#8e8e93]">2001664/150880</p>
+            <div className="mt-3 h-px bg-[#e0e0e0]" />
+            <div className="mt-5 flex items-center justify-between">
+              <p className="text-[13px] text-muted">Codice biglietto:</p>
+              <p className="text-[13px] text-muted">2001664/150880</p>
             </div>
           </div>
         </article>
