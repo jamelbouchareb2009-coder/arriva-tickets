@@ -36,7 +36,7 @@ export function TicketView() {
       <AppHeader title="Active ticket" backTo="/tickets" />
 
       <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[10px] pt-3">
-        <article className="overflow-hidden rounded-[8px] bg-paper px-5 pb-7 pt-[18px]">
+        <article className="overflow-hidden rounded-[6px] bg-paper px-5 pb-7 pt-[18px]">
           <ArrivaLogo className="mb-4 h-[22px]" />
 
           <img
@@ -86,7 +86,7 @@ export function TicketView() {
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
-          <div className="relative z-10 rounded-[6px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
+          <div className="relative z-10 -mt-3 rounded-[4px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
             <p className="text-[13px] leading-[16px]">
               Da <span className="font-bold">CASTO</span> a{" "}
               <span className="font-bold">SALÒ</span>
@@ -97,7 +97,7 @@ export function TicketView() {
             </p>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-2">
             <p className="text-[13px] leading-[18px] text-muted">Emesso il:</p>
             <p className="mt-1 text-[16px] font-bold leading-[20px] text-ink">
               08/09/2026 – 20:26
