@@ -7,3 +7,7 @@ export const validationSrc = "/icons/validation.png";
 export const clockSrc = "/icons/clock.png";
 export const lockSrc = "/icons/lock.png";
 export const logoSrc = "/arriva-logo.svg";
+export const routeVestoneIdroSrc = "/route-vestone-idro.png";
+export const routeSaloBresciaSrc = "/route-salo-brescia.png";
+export const metaVestoneIdroSrc = "/meta-vestone-idro.png";
+export const metaSaloBresciaSrc = "/meta-salo-brescia.png";

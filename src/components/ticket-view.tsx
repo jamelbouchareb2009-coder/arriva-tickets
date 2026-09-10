@@ -9,9 +9,13 @@ import { SectionAccordion } from "@/components/section-accordion";
 import { CardInfoIcon, PlaneIcon, ValidationIcon } from "@/components/ticket-icons";
 import { TransferSheet } from "@/components/transfer-sheet";
 import { productTitleSrc, cardHolderSrc } from "@/lib/img";
-import { TICKET } from "@/lib/ticket-data";
+import { TICKET, TICKETS, type TicketId } from "@/lib/ticket-data";
 
-export function TicketView() {
+export function TicketView({
+  ticketId = "casto-salo",
+}: {
+  ticketId?: TicketId;
+}) {
   const [cardOpen, setCardOpen] = useState(false);
   const [qrOpen, setQrOpen] = useState(true);
   const [enlarge, setEnlarge] = useState(false);
@@ -72,6 +76,8 @@ export function TicketView() {
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
+          {ticketId === "casto-salo" ? (
+            <>
           <div className="relative z-10 mt-1.5 rounded-[4px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
             <p className="text-[13px] leading-[16px]">
               Da <span className="font-bold">CASTO</span> a{" "}
@@ -100,6 +106,23 @@ export function TicketView() {
               <p className="text-[13px] text-muted">2001664/150880</p>
             </div>
           </div>
+            </>
+          ) : (
+            <>
+              <img
+                src={TICKETS[ticketId].routeBarSrc}
+                alt={`Da ${TICKETS[ticketId].from} a ${TICKETS[ticketId].to}`}
+                className="relative z-10 mt-1.5 w-full select-none rounded-[4px]"
+                draggable={false}
+              />
+              <img
+                src={TICKETS[ticketId].metaSrc}
+                alt={`${TICKETS[ticketId].from} ${TICKETS[ticketId].to} ticket details`}
+                className="mt-2 w-full select-none"
+                draggable={false}
+              />
+            </>
+          )}
         </article>
       </div>
 
