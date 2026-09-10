@@ -35,7 +35,7 @@ export function SectionAccordion({
         >
           {icon}
         </span>
-        <span className="flex-1 text-[16px] font-semibold tracking-tight text-ink">
+        <span className="flex-1 text-[16px] font-semibold text-black [font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','SF Pro Display',system-ui,sans-serif]">
           {title}
         </span>
         <ChevronDown
