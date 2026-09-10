@@ -35,8 +35,8 @@ export function TicketView() {
     >
       <AppHeader title="Active ticket" backTo="/tickets" />
 
-      <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[18px] pt-3">
-        <article className="overflow-hidden rounded-[14px] bg-paper px-5 pb-7 pt-[18px]">
+      <div className="ticket-scroll min-h-0 flex-1 overflow-y-auto bg-arriva-green px-[10px] pt-3">
+        <article className="overflow-hidden rounded-[8px] bg-paper px-5 pb-7 pt-[18px]">
           <ArrivaLogo className="mb-4 h-[22px]" />
 
           <img
@@ -86,7 +86,7 @@ export function TicketView() {
 
           {qrOpen ? <ScallopWave /> : <div className="h-3" />}
 
-          <div className="relative z-10 rounded-[10px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
+          <div className="relative z-10 rounded-[6px] bg-arriva-green-bar px-3.5 py-[9px] text-paper">
             <p className="text-[13px] leading-[16px]">
               Da <span className="font-bold">CASTO</span> a{" "}
               <span className="font-bold">SALÒ</span>
